@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Salary Prediction</h1>
+    <form action="/predict" method="GET">
+      <div class="form-control">
+        <input type="text" name="name" required />
+        <label>Name</label>
+      </div>
+      <div class="form-control">
+        <input type="text" name="exp" required />
+        <label>Work Experience</label>
+      </div>
+      <button type="submit" class="btn">Predict</button>
+    </form>
+  </div>
+  <script src="{{ url_for('static',filename='script.js') }}"></script>
+</body>
+
+</html>
