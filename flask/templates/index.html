@@ -4,29 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
   <title>Predição de Salário</title>
 </head>
 
 <body>
   <div class="container">
     <h1>Predição de Salário</h1>
-    <form action="/predict" method="GET">
+    <form action="/predict" method="POST">
       <div class="form-control">
         <label>País:</label>
-        <input type="text" name="country" required />
+        <select name="country" required>
+          <option value="United States of America">Estados Unidos da América</option>
+          <option value="Germany">Alemanha</option>
+          <option value="United Kingdom of Great Britain and Northern Ireland">Reino Unido</option>
+          <option value="Canada">Canadá</option>
+          <option value="India">Índia</option>
+          <option value="France">França</option>
+          <option value="Netherlands">Países Baixos</option>
+          <option value="Australia">Austrália</option>
+          <option value="Brazil">Brasil</option>
+          <option value="Spain">Espanha</option>
+          <option value="Sweden">Suécia</option>
+          <option value="Italy">Itália</option>
+          <option value="Poland">Polônia</option>
+          <option value="Switzerland">Suíça</option>
+          <option value="Denmark">Dinamarca</option>
+          <option value="Norway">Noruega</option>
+          <option value="Israel">Israel</option>
+        </select>
       </div>
       <div class="form-control">
         <label>Nível de Educação:</label>
-        <input type="text" name="ed_level" required />
+        <select name="ed_level" required>
+          <option value="Less than a Bachelors">Menos que um Bacharelado</option>
+          <option value="Bachelor’s degree">Bacharelado</option>
+          <option value="Master’s degree">Mestrado</option>
+          <option value="Post grad">Pós-graduação</option>
+        </select>
       </div>
       <div class="form-control">
         <label>Tempo de atuação como desenvolvedor (em anos):</label>
-        <input type="number" name="years_code" required />
+        <input type="number" name="years_code" min="0" step="any" required />
       </div>
       <button type="submit" class="btn">Predizer</button>
     </form>
   </div>
-  <script src="{{ url_for('static',filename='script.js') }}"></script>
 </body>
 
 </html>

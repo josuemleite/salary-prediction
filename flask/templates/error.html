@@ -2,23 +2,24 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
-  <title>Your Salary</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <title>Teu Salário</title>
 </head>
 
 <body>
   <div class="container">
     <div class="container">
       <form action="/" method="GET">
-        <h1>Oops! some error occured.</h1>
-        <button class="btn">Try Again</button>
+        <h1>Oops! Ocorreu algum erro.</h1>
+        <button class="btn">Tentar novamente</button>
       </form>
     </div>
   </div>
-  <script src="{{ url_for('static',filename='script.js') }}"></script>
 </body>
 
 </html>

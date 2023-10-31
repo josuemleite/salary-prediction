@@ -2,24 +2,25 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
-  <title>Your Salary</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <title>Teu Salário</title>
 </head>
 
 <body>
   <div class="container">
     <form action="/" method="GET">
       <h1>
-        {{data[0]}}, you can expect your monthly salary around rupees
-        {{data[1]}}.
+        {{'$ {:,.2f}'.format(data[0])}}
       </h1>
-      <button class="btn">Go Back</button>
+      <p>Isso dá <strong>{{'$ {:,.2f}'.format(data[0]/12)}}</strong> por mês...</p>
+      <button class="btn">Voltar</button>
     </form>
   </div>
-  <script src="{{ url_for('static',filename='script.js') }}"></script>
 </body>
 
 </html>

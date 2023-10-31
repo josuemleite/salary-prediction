@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: steelblue;
+  background-color: lightblue;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -15,83 +15,75 @@ body {
   overflow: hidden;
   margin: 0;
   font-family: muli, sans-serif;
-  /* font-weight: 400; */
-  /* font-style: normal; */
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(20, 56, 134, 0.6);
   padding: 20px 40px;
-  border-radius: 5px;
+  border-radius: 10px;
+  width: 512px;
+  text-align: left;
 }
 
 .container h1 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.container p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .btn {
   cursor: pointer;
-  display: inline-block;
+  display: block;
   width: 100%;
-  background: lightblue;
+  background-color: #003366;
+  color: #fff;
   padding: 15px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
   border: 0;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 .btn:focus {
   outline: 0;
 }
+
 .btn:active {
   transform: scale(0.95);
 }
+
 .text {
   margin-top: 30px;
 }
+
 .form-control {
-  position: relative;
   margin: 20px 0 40px;
-  width: 300px;
+  width: 100%;
 }
 
+.form-control select,
 .form-control input {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 0;
-  border-bottom: 2px white solid;
+  border-radius: 5px;
   display: block;
   width: 100%;
   font-size: 18px;
-  padding: 15px 0;
-  color: #fff;
-}
-
-.form-control input:focus,
-.form-control input:valid {
-  outline: 0;
-  /* opacity: 0; */
-  /* border-color: lightblue; */
-  border-bottom-color: lightblue;
+  padding: 15px;
+  color: #003366;
+  margin-bottom: 10px;
 }
 
 .form-control label {
-  position: absolute;
-  /* opacity: 0; */
-  top: 15px;
-  left: 0;
-}
-
-.form-control label span {
-  display: inline-block;
+  display: block;
   font-size: 18px;
-  min-width: 5px;
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.form-control input:focus + label span,
-.form-control input:valid + label span {
-  color: lightblue;
-  transform: translateY(-30px);
+  margin-bottom: 5px;
 }
