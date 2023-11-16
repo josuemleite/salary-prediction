@@ -8,10 +8,10 @@ app = Flask(__name__)
 CORS(app)
 
 with open('./model/saved_steps.pkl', 'rb') as file:
-    data = pickle.load(file)
-    regressor_loaded = data["model"]
-    le_country = data["le_country"]
-    le_education = data["le_education"]
+    model = pickle.load(file)
+    regressor_loaded = model["model"]
+    le_country = model["le_country"]
+    le_education = model["le_education"]
 
 @app.route("/")
 def home():
@@ -31,6 +31,20 @@ def predict():
     y_pred = regressor_loaded.predict(x)
 
     return render_template('predict.html', data=y_pred)
+
+@app.route("/api", methods=["POST"])
+def results():
+    data = request.get_json(force=True)
+    
+    data["country"] = le_country.transform([data["country"]])[0]
+    data["ed_level"] = le_education.transform([data["ed_level"]])[0]
+    
+    x = np.array([[data["country"], data["ed_level"], data["years_code"]]])
+    x = x.astype(float)
+    
+    y_pred = regressor_loaded.predict(x)
+
+    return jsonify({"prediction": y_pred[0]})
 
 @app.errorhandler(404)
 def not_found_error(error):
